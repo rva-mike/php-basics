@@ -14,7 +14,7 @@ SELECT * FROM articles
 SELECT column2, column2
 FROM table_name
 
----
+-----------
 
 WHERE clauses - Whenever you use a WHERE in the query,
 any columns in the WHERE clause need an index
@@ -34,7 +34,7 @@ FROM `article`
 WHERE title = 'An interesting post' 
 	OR title = 'First post';
 
------
+-----------
 
 ORDERING the result set - use index if using column for faster results
 
@@ -47,3 +47,27 @@ ex:
 $sql = "SELECT *
         FROM article
         ORDER BY published_at;";
+
+
+-------------
+
+INSERT INTO statements
+
+INSERT INTO table_name
+VALUES (value1, value2, value3);
+
+for only specific columns
+
+INSERT INTO table_name (column1, column2)
+VALUES (value1, value2);
+
+INSERT INTO article (title, content)
+VALUES ('another article', 'some content');
+
+
+inserting multiple sets of data at once
+
+INSERT INTO table_name (column1, column2)
+VALUES (value1, value2),
+       (value3, value4),
+       (value5, value6);

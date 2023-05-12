@@ -42,4 +42,5 @@ if ($results === false) {
 <?php endif; ?>
 
 
+
 <?php require 'includes/footer.php'; ?>
