@@ -2,6 +2,8 @@
 
 require 'includes/database.php';
 
+$conn = getDB();
+
 // Construct a SQL query to retrieve all articles, ordered by published date
 $sql = "SELECT *
         FROM article
@@ -32,9 +34,9 @@ if ($results === false) {
                 <article>
 
                     <h2><a href="article.php?id=<?= $article['id']; ?>">
-                            <?= $article['title']; ?></a></h2>
+                            <?= htmlspecialchars($article['title']); ?></a></h2>
 
-                    <p><?= $article['content']; ?></p>
+                    <p><?= htmlspecialchars($article['content']); ?></p>
                 </article>
             </li>
         <?php endforeach; ?>
